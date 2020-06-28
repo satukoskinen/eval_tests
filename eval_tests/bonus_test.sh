@@ -23,7 +23,7 @@ else
 fi
 echo "BONUS tests"
 cp libft.h eval_tests/
-gcc -Wall -Wextra -Werror -o test_bonus -L. -lft eval_tests/bonus_tests/*.c
+gcc -Wall -Wextra -Werror -o test_bonus eval_tests/bonus_tests/*.c -L. -lft
 ./test_bonus
 rm -f norm_check norm_errors make_check test_bonus libft.a eval_tests/libft.h
 for f in eval_tests/bonus_tests/*

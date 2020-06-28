@@ -26,7 +26,7 @@ else
 fi
 echo "PART 1 tests"
 cp libft.h eval_tests/
-gcc -Wall -Wextra -Werror -o test_part1 -L. -lft eval_tests/p1_tests/*.c
+gcc -Wall -Wextra -Werror -o test_part1 eval_tests/p1_tests/*.c -L. -lft
 ./test_part1
 rm norm_check norm_errors make_check test_part1 libft.a eval_tests/libft.h
 for f in eval_tests/p1_tests/*
