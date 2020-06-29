@@ -21,11 +21,11 @@ int		strclr_test(void)
 
     free(str1);
     str1 = NULL;
-
+/*
     ft_strclr(str1);
     tests_passed++;
-
-	if (tests_passed == 2)
+*/
+	if (tests_passed == 1)
 	{
 		printf("\tOK\n");
 		return (1);
