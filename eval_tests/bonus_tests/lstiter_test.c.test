@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+void	ft_free_content(void *content, size_t size);
+
 void	ft_f1(t_list *elem)
 {
 	elem->content_size++;
