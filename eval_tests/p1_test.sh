@@ -3,7 +3,7 @@ do
 	mv "$f" "${f%.test}"
 done
 echo "PART 1 norm check"
-~/.norminette/norminette.rb -R CheckForbiddenSourceHeader ft_atoi.c ft_bzero.c ft_isalnum.c \
+~/.norminette/norminette.rb ft_atoi.c ft_bzero.c ft_isalnum.c \
 ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memccpy.c ft_memchr.c \
 ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strcat.c ft_strchr.c \
 ft_strcmp.c ft_strcpy.c ft_strdup.c ft_strlcat.c ft_strlen.c ft_strncat.c \
