@@ -45,10 +45,10 @@ int main(void)
 	printf("ft_strncat:");
 	tests_passed += strncat_test();
 	tests_run++;
-/*	printf("ft_strlcat:");
+	printf("ft_strlcat:");
 	tests_passed += strlcat_test();
 	tests_run++;
-*/	printf("ft_strchr:");
+	printf("ft_strchr:");
 	tests_passed += strchr_test();
 	tests_run++;
 	printf("ft_strrchr:");
@@ -57,10 +57,10 @@ int main(void)
 	printf("ft_strstr:");
 	tests_passed += strstr_test();
 	tests_run++;
-/*	printf("ft_strnstr:");
+	printf("ft_strnstr:");
 	tests_passed += strnstr_test();
 	tests_run++;
-*/	printf("ft_strcmp:");
+	printf("ft_strcmp:");
 	tests_passed += strcmp_test();
 	tests_run++;
 	printf("ft_strncmp:");
