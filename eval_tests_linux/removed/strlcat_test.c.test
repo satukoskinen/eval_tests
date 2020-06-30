@@ -39,9 +39,17 @@ int strlcat_test(void)
     else
         printf("ERROR: strcmp(s1, s2) != 0\n%s\n%s\n", s1, s2);
 
+    ret1 = ft_strlcat(s1, src, 5);
+    ret2 = ft_strlcat(s2, src, 5);
+
+    if (ret1 == ret2)
+        tests_passed++;
+    else
+        printf("ERROR: ret1 != ret2\n%zu\n%zu\n", ret1, ret2);
+
     free(s1);
     free(s2);
-    if (tests_passed == 4)
+    if (tests_passed == 5)
 	{
 		printf("\tOK\n");
         return (1);
