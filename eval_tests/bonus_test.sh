@@ -3,9 +3,8 @@ do
 	mv "$f" "${f%.test}"
 done
 echo "BONUS norm check"
-~/.norminette/norminette.rb -R CheckForbiddenSourceHeader ft_lstnew.c \
-ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c \
-ft_isspace.c > norm_check
+~/.norminette/norminette.rb ft_lstnew.c ft_lstadd.c \
+ft_lstdel.c ft_lstdelone.c ft_lstiter.c ft_lstmap.c > norm_check
 cat norm_check | egrep 'Error|Warning' > norm_errors
 if [ -s norm_errors ]
 then
