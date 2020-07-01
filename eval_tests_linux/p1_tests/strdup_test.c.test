@@ -9,6 +9,12 @@ int		strdup_test(void)
 
 	char *s1 = ft_strdup("test testfoisfuaöocmapöoeixpaxiepqwir ceocrjoaisuaoweisucdaweixquoeuqoxeuoqndoeas");
 	char *s2 = strdup("test testfoisfuaöocmapöoeixpaxiepqwir ceocrjoaisuaoweisucdaweixquoeuqoxeuoqndoeas");
+
+	if (strlen(s1) == strlen(s2))
+		tests_passed++;
+	else
+		printf("\nERROR 1: strlen(s1) != strlen(s2)\n");
+
 	if (strcmp(s1, s2) == 0)
 		tests_passed++;
 	else
@@ -27,7 +33,7 @@ int		strdup_test(void)
 	free(s1);
 	free(s2);
 
-	if (tests_passed == 2)
+	if (tests_passed == 3)
 	{
 		printf("\tOK\n");
         return (1);
