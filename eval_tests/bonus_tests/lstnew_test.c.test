@@ -70,7 +70,7 @@ int		lstnew_test(void)
 	
 	free(new->content);
 	free(new);
-
+/*
 	new = ft_lstnew("not this", 0);
 
 	if (new->content == NULL)
@@ -89,8 +89,8 @@ int		lstnew_test(void)
 		printf("\nERROR: new->content_size != 0\n");
 	
 	free(new);
-
-	if (tests_passed == 16)
+*/
+	if (tests_passed == 13)
 	{
 		printf("\tOK\n");
 		return (1);

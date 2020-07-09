@@ -36,7 +36,7 @@ int		lstdelone_test(void)
 		tests_passed++;
 	else
 		printf("\nERROR: next != NULL\n");
-
+/*
 	new = ft_lstnew("", 0);
 	ft_lstdelone(&new, ft_del1);
 
@@ -44,7 +44,7 @@ int		lstdelone_test(void)
 		tests_passed++;
 	else
 		printf("\nERROR: new != NULL\n");
-
+*/
 	if (tests_passed == 4)
 	{
 		printf("\tOK, check for memory leaks\n");

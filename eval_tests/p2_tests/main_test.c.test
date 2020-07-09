@@ -6,7 +6,7 @@ int main(void)
 	int tests_passed = 0;
 	int tests_run = 0;
 
-	printf("ft_memalloc:");
+/*	printf("ft_memalloc:");
 	tests_passed += memalloc_test();
 	tests_run++;
 	printf("ft_memdel:");
@@ -51,7 +51,7 @@ int main(void)
 	printf("ft_strsplit:");
 	tests_passed += strsplit_test();
 	tests_run++;
-	printf("ft_itoa:");
+*/	printf("ft_itoa:");
 	tests_passed += itoa_test();
 	tests_run++;
 
