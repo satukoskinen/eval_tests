@@ -45,7 +45,7 @@ int		lstdelone_test(void)
 	else
 		printf("\nERROR: new != NULL\n");
 */
-	if (tests_passed == 4)
+	if (tests_passed == 3)
 	{
 		printf("\tOK, check for memory leaks\n");
 		return (1);
