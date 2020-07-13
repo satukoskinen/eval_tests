@@ -1,0 +1,105 @@
+for f in eval_tests/*.test
+do
+	mv "$f" "${f%.test}"
+done
+make -C libft fclean && make -C libft && make -C libft clean
+gcc -g -I libft/includes -o get_next_line.o -c get_next_line.c
+gcc -g -Wall -Wextra -Werror -I libft/includes -o main.o -c eval_tests/main_test.c
+gcc -g -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
+rm main.o get_next_line.o
+echo "\nBUFF_SIZE setting:"
+cat get_next_line.h | grep -e 'BUFF_SIZE'
+echo "\n--- test 1: ./test_gnl bible\t---"
+./test_gnl eval_tests/bible_2.txt > test_output
+diff test_output eval_tests/bible_2.txt > diff_output
+if [ -s diff_output ]
+then
+	echo "diff test_output bible_2.txt"
+	cat diff_output
+else
+	echo "diff test_output bible_2.txt\t OK"
+fi
+echo "\n--- test 2: ./test_gnl test\t---"
+./test_gnl eval_tests/test > test_output
+diff test_output eval_tests/test > diff_output
+if [ -s diff_output ]
+then
+	echo "diff test_output test"
+	cat diff_output
+else
+	echo "diff test_output test\t\t OK"
+fi
+echo "\n--- test 3: ./test_gnl test_2\t---"
+./test_gnl eval_tests/test_2 > test_output
+diff test_output eval_tests/test_2 > diff_output
+if [ -s diff_output ]
+then
+	echo "diff test_output test_2"
+	cat diff_output
+else
+	echo "diff test_output test_2\t\t OK"
+fi
+echo "\n--- test 4: ./test_gnl empty\t---"
+./test_gnl eval_tests/empty > test_output
+diff test_output eval_tests/empty > diff_output
+if [ -s diff_output ]
+then
+	echo "diff test_output empty"
+	cat diff_output
+else
+	echo "diff test_output empty\t\t OK"
+fi
+echo "\n--- test 5: ./test_gnl newlines\t---"
+./test_gnl eval_tests/newlines > test_output
+diff test_output eval_tests/newlines > diff_output
+if [ -s diff_output ]
+then
+	echo "diff test_output newlines\t"
+	cat diff_output
+else
+	echo "diff test_output newlines\t OK"
+fi
+echo "\n--- test 6: ./test_gnl longline\t---"
+./test_gnl eval_tests/longline > test_output
+diff test_output eval_tests/longline > diff_output
+if [ -s diff_output ]
+then
+	echo "diff test_output longline"
+	cat diff_output
+else
+	echo "diff test_output longline\t OK"
+fi
+echo "\n--- test 6: ./test_gnl nofile\t---"
+./test_gnl nofile > test_output
+if [ -s test_output ]
+then
+	echo "test_output not empty:"
+	cat test_output
+else
+	echo "test_output \t\t OK"
+fi
+echo "\n--- test 7: ./test_gnl eval_tests ---"
+./test_gnl eval_tests > test_output
+if [ -s test_output ]
+then
+	echo "test_output not empty:"
+	cat test_output
+else
+	echo "test_output \t\t OK"
+fi
+echo "\n--- test 8: cat test | ./test_gnl ---"
+cat eval_tests/test | ./test_gnl > test_output
+diff test_output eval_tests/test > diff_output
+if [ -s diff_output ]
+then
+	echo "diff test_output test"
+	cat diff_output
+else
+	echo "diff test_output test\t\t OK"
+fi
+echo "\nalso check: NULL line, memory leaks, multiple fds\n"
+rm test_output diff_output
+for f in eval_tests/*
+do
+	mv "$f" "${f}.test"
+done
