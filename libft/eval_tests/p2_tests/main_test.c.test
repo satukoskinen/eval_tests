@@ -55,8 +55,7 @@ int main(void)
 	tests_passed += itoa_test();
 	tests_run++;
 
-/*	printf("\nPART 2: tests passed: %d out of %d\n\n", tests_passed, tests_run);
-**	while (1)
-**		;
-*/	return (0);
+//	printf("\nPART 2: tests passed: %d out of %d\n\n", tests_passed, tests_run);
+//	while (1);
+	return (0);
 }
