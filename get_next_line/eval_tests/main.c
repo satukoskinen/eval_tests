@@ -20,13 +20,14 @@ int		main(int argc, char **argv)
 		while (ret == 1)
 		{
 			ret = get_next_line(fd, &line);
+			if (i != 1 && ret == 1)
+				printf("\n");
 //			printf("%d	", ret);
 			if (line != NULL)
 				printf("%s", line);
-			if (ret == 1)
-				printf("\n");
 			free(line);
 			line = NULL;
+			i++;
 		}
 	}	
 
@@ -38,13 +39,14 @@ int		main(int argc, char **argv)
 		while (ret == 1)
 		{
 			ret = get_next_line(fd, &line);
+			if (i != 1 && ret == 1)
+				printf("\n");
 //			printf("%d	", ret);
 			if (line != NULL)
 				printf("%s", line);
-			if (ret == 1)
-				printf("\n");
 			free(line);
 			line = NULL;
+			i++;
 		}
 		close(fd);
 	}
