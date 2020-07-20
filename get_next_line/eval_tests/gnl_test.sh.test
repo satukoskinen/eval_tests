@@ -7,6 +7,7 @@ gcc -g -I libft/includes -o get_next_line.o -c get_next_line.c
 gcc -g -Wall -Wextra -Werror -I libft/includes -o main.o -c eval_tests/main_test.c
 gcc -g -o test_gnl main.o get_next_line.o -I libft/includes -L libft/ -lft
 rm main.o get_next_line.o
+echo "compiled executable test_gnl"
 echo "\nBUFF_SIZE setting:"
 cat get_next_line.h | grep -e 'BUFF_SIZE'
 echo "\n--- test 1: ./test_gnl bible\t---"
