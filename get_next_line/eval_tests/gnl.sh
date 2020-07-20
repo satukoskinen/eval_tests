@@ -16,11 +16,11 @@ do
 	diff test_output $file > diff_output
 	if [ -s diff_output ]
 	then
-		echo "diff test_output ${file/eval_tests\/test_files\/}"
+		echo "diff test_output ${file/eval_tests\/test_files\/} not empty"
 #		cat diff_output
 	else
-		echo "diff test_output $file OK"
+		echo "diff test_output ${file/eval_tests\/test_files\/} OK"
 	fi
 	rm test_output diff_output
 done
-echo "\nalso check: NULL line, memory leaks, multiple fds\n"
+echo "\nalso check: NULL line, invalid fd, failed read, return values, memory leaks, multiple fds\n"
