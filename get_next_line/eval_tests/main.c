@@ -1,4 +1,3 @@
-#include "libft.h"
 #include "get_next_line.h"
 #include <fcntl.h>
 #include <stdlib.h>
@@ -26,7 +25,8 @@ int		main(int argc, char **argv)
 				printf("%s", line);
 			if (ret == 1)
 				printf("\n");
-			ft_strdel(line);
+			free(line);
+			line = NULL;
 		}
 	}	
 
@@ -43,7 +43,8 @@ int		main(int argc, char **argv)
 				printf("%s", line);
 			if (ret == 1)
 				printf("\n");
-			ft_strdel(line);
+			free(line);
+			line = NULL;
 		}
 		close(fd);
 	}
@@ -62,7 +63,8 @@ int		main(int argc, char **argv)
 			{
 				ret = get_next_line(fds[i], &line);
 				printf("argv[%d]: ret %d $%s$\n", i, ret, line);
-				ft_strdel(line);
+				free(line);
+				line = NULL;
 			}
 		}
 	}
